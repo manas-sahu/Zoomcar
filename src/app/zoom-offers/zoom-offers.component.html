@@ -1,0 +1,49 @@
+<div class="container-fluid">
+   <div *ngFor="let item of value">
+     <div *ngIf="item.discount =='60%'">
+       <div *ngFor="let items of item.location">
+         <div *ngIf="items.name == 'Bellandur - Beside Sakara Hospital'">{{item.car}} | {{items.name}}
+          <table class="table table-striped table-inverse table-responsive">
+            <thead class="thead-inverse">
+              <tr>
+                <th> Start & End Date</th>
+                <th> Start & End Time</th>
+                <th>KM</th>
+                <th>Price</th>
+              </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let val of item.pricing">
+                  <td scope="row">{{item.starts_date}} - {{item.ends_date}}</td>
+                  <td>{{item.starts_time}} - {{item.ends_time}}</td>
+                  <td>{{val.kms}}</td>
+                  <td>{{val.discounted_fare}}</td>
+                </tr>
+              </tbody>
+          </table>
+         </div>
+         <div *ngIf="items.name == 'Marathalli (Mahindra - Sireesh Auto)'">{{item.car}} | {{items.name}}
+          <table class="table table-striped table-inverse table-responsive">
+            <thead class="thead-inverse">
+              <tr>
+                <th> Start & End Date</th>
+                <th> Start & End Time</th>
+                <th>KM</th>
+                <th>Price</th>
+              </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let val of item.pricing">
+                  <td scope="row">{{item.starts_date}} - {{item.ends_date}}</td>
+                  <td>{{item.starts_time}} - {{item.ends_time}}</td>
+                  <td>{{val.kms}}</td>
+                  <td>{{val.discounted_fare}}</td>
+                </tr>
+              </tbody>
+          </table>
+         </div>
+       </div>
+     </div>
+   </div>
+   
+</div>
