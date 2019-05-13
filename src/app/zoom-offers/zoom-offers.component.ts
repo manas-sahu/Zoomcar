@@ -16,7 +16,7 @@ export class ZoomOffersComponent implements OnInit {
 
   ngOnInit() {
     this.getZoomcarData();
-    //this.refreshZoomcar();
+    this.refreshZoomcar();
     
   }
   refreshZoomcar(){
@@ -24,7 +24,7 @@ export class ZoomOffersComponent implements OnInit {
       this.getZoomcarData();
       console.log("Refreshed");
       
-        }, 5000);
+        }, 60000);
   }
   getZoomcarData(){
     this.zoomService.getEasternBaganaloreOffers().subscribe(result => {
