@@ -8,4 +8,4 @@ npm install -g angular-cli-ghpages
 
 ng build --prod --base-href https://manas-sahu.github.io/Zoomcar/
 
-ngh -no-silent
+ngh --dir dist/zoomcar -no-silent
