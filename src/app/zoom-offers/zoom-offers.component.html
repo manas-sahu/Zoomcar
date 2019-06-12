@@ -1,15 +1,15 @@
-<<<<<<< HEAD
-<div class="container-fluid">
-  <!-- <table class="table table-striped table-inverse table-responsive">
-=======
-<div *ngIf="value == null" class="container-fluid" style="padding-top: 10%">
+<div *ngIf="value === undefined" class="container-fluid" style="padding-top: 10%">
+  <h3>
+     <span style="color:rgb(30, 94, 233);">Loading ...</span>
+  </h3>
+</div>
+<div *ngIf="value === null" class="container-fluid" style="padding-top: 10%">
   <h3>
      <span style="color:rgb(194, 49, 57);">No Offers</span>
   </h3>
 </div>
 <div *ngIf="value" class="container-fluid">
   <table class="table table-striped table-inverse table-responsive" width="100%">
->>>>>>> 1e5e247c63892f8811873208fe9fdfbbadb8a0ae
     <thead class="thead-inverse">
       <tr>
         <th width="12%" *ngFor="let percent of discount">
@@ -18,7 +18,7 @@
         </th>
       </tr>
     </thead>
-  </table> -->
+  </table>
   <div *ngFor="let item of value">
     <div *ngIf="discountPercentage == '60'">
       <div *ngIf="item.discount == '60%'">
@@ -27,14 +27,10 @@
           <table class="table table-striped table-inverse table-responsive table-hover">
             <thead class="thead-inverse">
               <tr>
-<<<<<<< HEAD
-                <th colspan="4">{{item.car}} | {{items.name}}</th>
-=======
                 <th colspan="4" [ngClass]="{
                   'soldOut':item.soldOut == false,
                   'available':item.soldOut !== false
                 }">{{item.car}} | {{items.name}}</th>
->>>>>>> 1e5e247c63892f8811873208fe9fdfbbadb8a0ae
               </tr>
               <tr>
                 <th> Start & End Date</th>
