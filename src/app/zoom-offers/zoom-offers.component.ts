@@ -15,6 +15,7 @@ export class ZoomOffersComponent implements OnInit {
   constructor(public zoomService:ZoomserviceService) { }
 
   ngOnInit() {
+    // this.discountPercentage = localStorage.getItem("discount");
     this.getZoomcarData();
     this.refreshZoomcar();
     
@@ -22,23 +23,22 @@ export class ZoomOffersComponent implements OnInit {
   refreshZoomcar(){
     setInterval(() => {
       this.getZoomcarData();
-      console.log("Refreshed");
+      //console.log("Refreshed");
       
         }, 60000);
   }
   getZoomcarData(){
     this.zoomService.getEasternBaganaloreOffers().subscribe(result => {
       this.value = result;
-      console.log(result);
+      //console.log(result);
     })
   }
   radioChangeHandeler(event){
     this.discountPercentage = event.target.value;
-    console.log(event);
-    console.log(this.discountPercentage);
-    this.getZoomcarData();
-    
-    
+    //localStorage.setItem("discount", event.target.value);
+    // console.log(event);
+    // console.log(this.discountPercentage);
+    // location.reload();
   }
 
 }
